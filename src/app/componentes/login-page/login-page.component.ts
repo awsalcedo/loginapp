@@ -32,6 +32,13 @@ export class LoginPageComponent implements OnInit {
     });
   }
 
+  onClickTwitterLogin(){
+    this.authService.loginTwitter()
+      .then((respuesta)=>{
+        this.router.navigate(['/privado']);
+      }).catch(error=> console.log(error.message));
+  }
+
   onClickGoogleLogin(){
     this.authService.loginGoogle()
       .then((respuesta)=>{
