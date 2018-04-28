@@ -8,6 +8,10 @@ export class AuthService {
 
   constructor(public afAuth: AngularFireAuth) { }
 
+  loginGoogle(){
+    return this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+  }
+
   //Creacion de usuarios
   registerUser(email: string, pass: string){
     //Tomado de la documentación de Firebase https://firebase.google.com/docs/reference/js/firebase.auth.Auth#createUserWithEmailAndPassword

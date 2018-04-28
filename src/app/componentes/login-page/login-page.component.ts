@@ -32,4 +32,11 @@ export class LoginPageComponent implements OnInit {
     });
   }
 
+  onClickGoogleLogin(){
+    this.authService.loginGoogle()
+      .then((respuesta)=>{
+        this.router.navigate(['/privado']);
+      }).catch(error => console.log(error.message));
+  }
+
 }
