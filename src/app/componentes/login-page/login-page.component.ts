@@ -39,4 +39,11 @@ export class LoginPageComponent implements OnInit {
       }).catch(error => console.log(error.message));
   }
 
+  onClickFacebookLogin(){
+    this.authService.loginFacebook()
+      .then((respuesta)=>{
+        this.router.navigate(['/privado']);
+      }).catch(error=> console.log(error.message));
+  }
+
 }
